@@ -18,4 +18,16 @@ public class Item implements IPrice {
     public long CalculatePrice(int quantity) {
         return 0;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public long getPrice() {
+        return price;
+    }
+
+    public long[] getOfferMinQuantityPrice() {
+        return offerMinQuantityPrice;
+    }
 }

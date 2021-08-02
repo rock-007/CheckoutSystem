@@ -1,6 +1,6 @@
 package stock;
 
-public class ItemC extends Item{
+public class ItemC extends Item {
     private int portionSize;
 
     public ItemC(String name, long price, int portionSize) {

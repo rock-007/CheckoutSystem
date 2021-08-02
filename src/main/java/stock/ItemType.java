@@ -1,10 +1,10 @@
 package stock;
 
 public enum ItemType {
-    TYPEA("A", 50),
-    TYPEB("B", 30),
-    TYPEC("C", 20),
-    TYPED("D", 15);
+    TYPEA("Pizza Flour",50),
+    TYPEB("Milk Bottle",30),
+    TYPEC("Eggs",20),
+    TYPED("Wine",15);
 
     private final String category;
     private final long price;
