@@ -1,6 +1,6 @@
 package stock;
 
-public class ItemD extends Item{
+public class ItemD extends Item {
 
     private int ageRestriction;
 

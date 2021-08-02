@@ -6,7 +6,7 @@ import java.util.Map;
 public class Stock {
 
     private String storeLocation;
-    private Map<Item,Integer> items;
+    private Map<Item, Integer> items;
 
     public Stock(String storeLocation) {
         this.storeLocation = storeLocation;
@@ -25,13 +25,13 @@ public class Stock {
         return items;
     }
 
-    public void setItems( Item item , Integer quantity) {
-        this.items.put(item, getItemsQuantity(item, quantity));
+    public void setItems(Item item, Integer quantity) {
+        this.items.put(item, getItemsQuantity(item) + quantity);
     }
 
-    private Integer getItemsQuantity(Item item,Integer quantity) {
+    public Integer getItemsQuantity(Item item) {
 
-       return this.items.getOrDefault(item,0)+quantity;
+        return this.items.getOrDefault(item, 0);
     }
 
 

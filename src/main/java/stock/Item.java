@@ -11,7 +11,7 @@ public class Item implements IPrice {
     public Item(String name, long price) {
         this.name = name;
         this.price = price;
-        this.offerMinQuantityPrice =  new long[]{-1,price};
+        this.offerMinQuantityPrice = new long[]{-1, price};
     }
 
     @Override
