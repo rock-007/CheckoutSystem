@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Stock {
-
     private String storeLocation;
     private Map<Item, Integer> items;
 
@@ -29,8 +28,7 @@ public class Stock {
         this.items.put(item, getItemsQuantity(item) + quantity);
     }
 
-        public Integer getItemsQuantity(Item item) {
-
+    public Integer getItemsQuantity(Item item) {
         return this.items.getOrDefault(item, 0);
     }
 

@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CheckOutCounter {
-
     private int tillNo;
     private String operatorName;
     private Map<Item, int[]> scanItemsQuantityAndTotalPrice;
@@ -44,10 +43,8 @@ public class CheckOutCounter {
     public int[] addItemsQuantityAndTotalPrice(Item item, int quantity) {
         //Array of size 2 as index 0 is quantity and index 1 is total price
         int[] quantityAndTotalPrice = new int[2];
-
         quantityAndTotalPrice[0] = this.getScannedItemPreviousQuantity(item) + quantity;
         quantityAndTotalPrice[1] = (int) item.CalculatePrice(quantityAndTotalPrice[0]);
-
         return quantityAndTotalPrice;
 
     }
@@ -58,6 +55,18 @@ public class CheckOutCounter {
     }
 
     public int getScanItemsRunningTotal() {
+        return calculateScanItemsTotal();
+    }
+
+
+    public int checkOutCustomer() {
+        int finalTotal = calculateScanItemsTotal();
+        this.scanItemsQuantityAndTotalPrice = new HashMap<>();
+        return finalTotal;
+
+    }
+
+    public int calculateScanItemsTotal() {
         int totalPrice = 0;
         for (Map.Entry<Item, int[]> eachScannedItem : scanItemsQuantityAndTotalPrice.entrySet()) {
             totalPrice += eachScannedItem.getValue()[1];

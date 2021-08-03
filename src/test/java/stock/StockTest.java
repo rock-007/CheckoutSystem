@@ -6,7 +6,6 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class StockTest {
-
     ItemA itema;
     ItemB itemb;
     ItemC itemc;

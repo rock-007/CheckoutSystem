@@ -1,7 +1,6 @@
 package stock;
 
 public class ItemD extends Item {
-
     private int ageRestriction;
 
     public ItemD(String name, long price, int ageRestriction) {

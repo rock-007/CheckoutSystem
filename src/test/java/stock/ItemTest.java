@@ -6,7 +6,6 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class ItemTest {
-
     ItemA itema;
     ItemB itemb;
     ItemC itemc;
@@ -24,25 +23,21 @@ public class ItemTest {
 
     @Test
     public void itemAHasPriceValue() {
-
         assertEquals(50L, itema.getPrice());
     }
 
     @Test
     public void itemBHasNameValue() {
-
         assertEquals("Milk Bottle", itemb.getName());
     }
 
     @Test
     public void itemCHasPortionSizeValue() {
-
         assertEquals(1, itemc.getPortionSize());
     }
 
     @Test
     public void itemDHasAgeRestrictionValue() {
-
         assertEquals(25, itemd.getAgeRestriction());
     }
 }

@@ -1,7 +1,6 @@
 package stock;
 
 public class ItemB extends Item {
-
     private int volume;
 
     public ItemB(String name, long price, int volume) {

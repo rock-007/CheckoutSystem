@@ -5,7 +5,6 @@ import stock.*;
 import static org.junit.Assert.assertEquals;
 
 public class CheckOutCounterTest {
-
     ItemA itemA;
     ItemB itemB;
     ItemC itemC;
@@ -17,8 +16,8 @@ public class CheckOutCounterTest {
     public void before() {
         itemA = new ItemA(ItemType.TYPEA.getCategory(), ItemType.TYPEA.getPrice(), 25);
         itemB = new ItemB(ItemType.TYPEB.getCategory(), ItemType.TYPEB.getPrice(), 2);
-        itemC = new ItemC(ItemType.TYPEB.getCategory(), ItemType.TYPEB.getPrice(), 1);
-        itemD = new ItemD(ItemType.TYPEB.getCategory(), ItemType.TYPEB.getPrice(), 25);
+        itemC = new ItemC(ItemType.TYPEC.getCategory(), ItemType.TYPEC.getPrice(), 1);
+        itemD = new ItemD(ItemType.TYPED.getCategory(), ItemType.TYPED.getPrice(), 25);
         itemA.setOfferMinQuantityPrice(ItemType.TYPEA.getMinQuantity(), ItemType.TYPEA.getOfferPrice());
         itemB.setOfferMinQuantityPrice(ItemType.TYPEB.getMinQuantity(), ItemType.TYPEB.getOfferPrice());
         stock = new Stock("Ground Floor");
@@ -31,14 +30,12 @@ public class CheckOutCounterTest {
 
     @Test
     public void hasTillOperatorName() {
-
         assertEquals("ADAM ID1234", checkOutCounter.getOperatorName());
     }
 
 
     @Test
     public void canShowRunningTotal() {
-
         checkOutCounter.setScanItemsPriceQuantity(itemA, 2);
         assertEquals(100, checkOutCounter.getScanItemsRunningTotal());
         checkOutCounter.setScanItemsPriceQuantity(itemB, 1);
@@ -51,12 +48,21 @@ public class CheckOutCounterTest {
     @Test
     public void canShowFinalTotal() {
         checkOutCounter.setScanItemsPriceQuantity(itemA, 2);
+        assertEquals(100, checkOutCounter.getScanItemsRunningTotal());
         checkOutCounter.setScanItemsPriceQuantity(itemB, 1);
+        assertEquals(130, checkOutCounter.getScanItemsRunningTotal());
         checkOutCounter.setScanItemsPriceQuantity(itemA, 2);
+        assertEquals(210, checkOutCounter.getScanItemsRunningTotal());
         checkOutCounter.setScanItemsPriceQuantity(itemC, 1);
+        assertEquals(230, checkOutCounter.getScanItemsRunningTotal());
         checkOutCounter.setScanItemsPriceQuantity(itemD, 5);
+        assertEquals(305, checkOutCounter.getScanItemsRunningTotal());
         checkOutCounter.setScanItemsPriceQuantity(itemB, 1);
+        assertEquals(320, checkOutCounter.getScanItemsRunningTotal());
         checkOutCounter.setScanItemsPriceQuantity(itemA, 5);
+        assertEquals(530, checkOutCounter.checkOutCustomer());
+        // After checkout the running total will be reset to zero.
+        assertEquals(0, checkOutCounter.getScanItemsRunningTotal());
 
 
     }
