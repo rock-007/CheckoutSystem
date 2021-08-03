@@ -40,11 +40,11 @@ public class CheckOutCounterTest {
     public void canShowRunningTotal() {
 
         checkOutCounter.setScanItemsPriceQuantity(itemA, 2);
-        assertEquals(2, checkOutCounter.getScanItemsRunningTotal());
+        assertEquals(100, checkOutCounter.getScanItemsRunningTotal());
         checkOutCounter.setScanItemsPriceQuantity(itemB, 1);
-        assertEquals(3, checkOutCounter.getScanItemsRunningTotal());
+        assertEquals(130, checkOutCounter.getScanItemsRunningTotal());
         checkOutCounter.setScanItemsPriceQuantity(itemA, 2);
-        assertEquals(5, checkOutCounter.getScanItemsRunningTotal());
+        assertEquals(210, checkOutCounter.getScanItemsRunningTotal());
 
     }
 
