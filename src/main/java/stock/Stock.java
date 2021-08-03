@@ -29,10 +29,10 @@ public class Stock {
         this.items.put(item, getItemsQuantity(item) + quantity);
     }
 
-    public Integer getItemsQuantity(Item item) {
+        public Integer getItemsQuantity(Item item) {
 
-        return this.items.getOrDefault(item, 0);
-    }
+            return this.items.getOrDefault(item, 0);
+        }
 
 
 }

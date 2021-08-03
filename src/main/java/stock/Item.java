@@ -14,6 +14,7 @@ public class Item implements IPrice {
         this.offerMinQuantityPrice = new long[]{-1, price};
     }
 
+    // build the logic here to calculate the total price
     @Override
     public long CalculatePrice(int quantity) {
         return 0;
