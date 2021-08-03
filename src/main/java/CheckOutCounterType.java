@@ -1,11 +1,11 @@
-public enum CheckOutCounterType {
+    public enum CheckOutCounterType {
 
-    ADAMTILL1("ADAM", 1),
-    ADAMTILL2("ADAM", 2),
-    ADAMTILL3("ADAM", 4),
-    JOHNTILL1("JOHN", 1),
-    JOHNTILL2("JOHN", 2),
-    JOHNTILL3("JOHN", 3);
+    ADAMTILL1("ADAM ID1234", 1),
+    ADAMTILL2("ADAM ID1234", 2),
+    ADAMTILL3("ADAM ID1234", 4),
+    JOHNTILL1("JOHN ID5678", 1),
+    JOHNTILL2("JOHN ID5678", 2),
+    JOHNTILL3("JOHN ID5678", 3);
 
     private final String name;
     private final int tillNo;

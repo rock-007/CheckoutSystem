@@ -31,4 +31,10 @@ public class Item implements IPrice {
     public long[] getOfferMinQuantityPrice() {
         return offerMinQuantityPrice;
     }
+
+    public void setOfferMinQuantityPrice(long minQuantity, long offerPrice) {
+        this.offerMinQuantityPrice[0] = minQuantity ;
+        this.offerMinQuantityPrice[0] = offerPrice ;
+
+    }
 }

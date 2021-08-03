@@ -1,17 +1,21 @@
 package stock;
 
 public enum ItemType {
-    TYPEA("Pizza Flour", 50),
-    TYPEB("Milk Bottle", 30),
-    TYPEC("Eggs", 20),
-    TYPED("Wine", 15);
+    TYPEA("Pizza Flour", 50, 3, 130),
+    TYPEB("Milk Bottle", 30, 2, 45),
+    TYPEC("Eggs", 20, -1, 0),
+    TYPED("Wine", 15, -1, 0);
 
     private final String category;
     private final long price;
+    private final long minQuantity;
+    private final long offerPrice;
 
-    ItemType(String category, long price) {
+    ItemType(String category, long price, long minQuantity, long offerPrice) {
         this.category = category;
         this.price = price;
+        this.minQuantity = minQuantity;
+        this.offerPrice = offerPrice;
     }
 
     public String getCategory() {
@@ -20,5 +24,13 @@ public enum ItemType {
 
     public long getPrice() {
         return price;
+    }
+
+    public long getMinQuantity() {
+        return minQuantity;
+    }
+
+    public long getOfferPrice() {
+        return offerPrice;
     }
 }

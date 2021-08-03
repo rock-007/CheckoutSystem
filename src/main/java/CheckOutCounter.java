@@ -48,13 +48,20 @@ public class CheckOutCounter {
         quantityAndTotalPrice[0] = this.getScannedItemPreviousQuantity(item) + quantity;
         quantityAndTotalPrice[1] = (int) item.CalculatePrice(quantityAndTotalPrice[0]);
 
-                return quantityAndTotalPrice;
+        return quantityAndTotalPrice;
 
     }
-
 
     public int getScannedItemPreviousQuantity(Item item) {
         return scanItemsQuantityAndTotalPrice.getOrDefault(item, new int[]{0})[0];
 
+    }
+
+    public int getScanItemsRunningTotal() {
+        int totalPrice = 0;
+        for (Map.Entry<Item, int[]> eachScannedItem : scanItemsQuantityAndTotalPrice.entrySet()) {
+            totalPrice += eachScannedItem.getValue()[1];
+        }
+        return totalPrice;
     }
 }

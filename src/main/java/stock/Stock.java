@@ -31,8 +31,8 @@ public class Stock {
 
         public Integer getItemsQuantity(Item item) {
 
-            return this.items.getOrDefault(item, 0);
-        }
+        return this.items.getOrDefault(item, 0);
+    }
 
 
 }
