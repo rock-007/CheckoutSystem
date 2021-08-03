@@ -20,6 +20,7 @@ public class CheckOutCounterTest {
         itemD = new ItemD(ItemType.TYPED.getCategory(), ItemType.TYPED.getPrice(), 25);
         itemA.setOfferMinQuantityPrice(ItemType.TYPEA.getMinQuantity(), ItemType.TYPEA.getOfferPrice());
         itemB.setOfferMinQuantityPrice(ItemType.TYPEB.getMinQuantity(), ItemType.TYPEB.getOfferPrice());
+        //Future extension can be checking stock level and decreases the quantity when the item has been scanned for customer and delete the item from the stock when it reaches to zero.
         stock = new Stock("Ground Floor");
         stock.setItems(itemA, 50);
         stock.setItems(itemB, 50);

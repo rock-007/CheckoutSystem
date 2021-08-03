@@ -8,37 +8,12 @@ public class CheckOutCounter {
     private String operatorName;
     private Map<Item, int[]> scanItemsQuantityAndTotalPrice;
 
-    //constructor
+
     public CheckOutCounter(int tillNo, String operatorName) {
         this.tillNo = tillNo;
         this.operatorName = operatorName;
         this.scanItemsQuantityAndTotalPrice = new HashMap<>();
     }
-
-    public int getTillNo() {
-        return tillNo;
-    }
-
-    public void setTillNo(int tillNo) {
-        this.tillNo = tillNo;
-    }
-
-    public String getOperatorName() {
-        return operatorName;
-    }
-
-    public void setOperatorName(String operatorName) {
-        this.operatorName = operatorName;
-    }
-
-    public Map<Item, int[]> getScanItemsPriceQuantity() {
-        return scanItemsQuantityAndTotalPrice;
-    }
-
-    public void setScanItemsPriceQuantity(Item item, int quantity) {
-        this.scanItemsQuantityAndTotalPrice.put(item, addItemsQuantityAndTotalPrice(item, quantity));
-    }
-
 
     public int[] addItemsQuantityAndTotalPrice(Item item, int quantity) {
         //Array of size 2 as index 0 is quantity and index 1 is total price
@@ -48,16 +23,6 @@ public class CheckOutCounter {
         return quantityAndTotalPrice;
 
     }
-
-    public int getScannedItemPreviousQuantity(Item item) {
-        return scanItemsQuantityAndTotalPrice.getOrDefault(item, new int[]{0})[0];
-
-    }
-
-    public int getScanItemsRunningTotal() {
-        return calculateScanItemsTotal();
-    }
-
 
     public int checkOutCustomer() {
         int finalTotal = calculateScanItemsTotal();
@@ -72,5 +37,40 @@ public class CheckOutCounter {
             totalPrice += eachScannedItem.getValue()[1];
         }
         return totalPrice;
+    }
+
+    public Map<Item, int[]> getScanItemsPriceQuantity() {
+        return scanItemsQuantityAndTotalPrice;
+    }
+
+    public void setTillNo(int tillNo) {
+        this.tillNo = tillNo;
+    }
+
+    public void setOperatorName(String operatorName) {
+        this.operatorName = operatorName;
+    }
+
+
+    public void setScanItemsPriceQuantity(Item item, int quantity) {
+        this.scanItemsQuantityAndTotalPrice.put(item, addItemsQuantityAndTotalPrice(item, quantity));
+    }
+
+    public int getTillNo() {
+        return tillNo;
+    }
+
+
+    public String getOperatorName() {
+        return operatorName;
+    }
+
+    public int getScannedItemPreviousQuantity(Item item) {
+        return scanItemsQuantityAndTotalPrice.getOrDefault(item, new int[]{0})[0];
+
+    }
+
+    public int getScanItemsRunningTotal() {
+        return calculateScanItemsTotal();
     }
 }
