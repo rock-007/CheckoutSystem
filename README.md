@@ -10,6 +10,7 @@ Implement the code for a checkout system that handles pricing schemes
 
 #  Future Extensions
     -Updating the quantity in Stock when the item has been scanned for customer and delete the item from the stock when it reaches to zero.
+    -Add the Database for persistence of data.
     -Adding user object having properties of name, age etc.
     -Checking age limit items before scanning for customers.
 
