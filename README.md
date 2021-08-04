@@ -18,14 +18,18 @@ Implement the code for a checkout system that handles pricing schemes
 #  File Structure
 
 ```bash
-
 ├── README.md
+├── img.png
+├── img_1.png
+├── img_2.png
+├── img_3.png
 ├── pom.xml
 ├── src
 │   ├── main
 │   │   ├── java
 │   │   │   ├── CheckOutCounter.java
 │   │   │   ├── CheckOutCounterType.java
+│   │   │   ├── Main.java
 │   │   │   ├── behaviour
 │   │   │   │   └── IPrice.java
 │   │   │   └── stock
@@ -47,6 +51,7 @@ Implement the code for a checkout system that handles pricing schemes
     ├── classes
     │   ├── CheckOutCounter.class
     │   ├── CheckOutCounterType.class
+    │   ├── Main.class
     │   ├── behaviour
     │   │   └── IPrice.class
     │   └── stock
@@ -66,7 +71,6 @@ Implement the code for a checkout system that handles pricing schemes
         └── stock
             ├── ItemTest.class
             └── StockTest.class
-
 ```
 
 #  Test_Passing_Screenshots
