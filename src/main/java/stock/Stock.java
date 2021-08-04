@@ -28,8 +28,25 @@ public class Stock {
         this.items.put(item, getItemsQuantity(item) + quantity);
     }
 
+    public void displayAllItems() {
+        for (Map.Entry<Item, Integer> eachItem : items.entrySet()) {
+            System.out.println(eachItem.getKey().getName());
+        }
+    }
+
     public Integer getItemsQuantity(Item item) {
         return this.items.getOrDefault(item, 0);
+    }
+
+    public Item searchItemQuantity(String itemName, int itemQuantity) {
+        Item result = null;
+        for (Map.Entry<Item, Integer> eachItem : items.entrySet()) {
+            if (eachItem.getKey().getName().equals(itemName) && eachItem.getValue() >= itemQuantity) {
+                 result = eachItem.getKey();
+            }
+        }
+        System.out.println("resuklt" + result);
+        return result;
     }
 
 

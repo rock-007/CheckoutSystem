@@ -54,6 +54,7 @@ public class CheckOutCounter {
 
     public void setScanItemsPriceQuantity(Item item, int quantity) {
         this.scanItemsQuantityAndTotalPrice.put(item, addItemsQuantityAndTotalPrice(item, quantity));
+        System.out.println("The running total is : "+getScanItemsRunningTotal());
     }
 
     public int getTillNo() {

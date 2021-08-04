@@ -1,8 +1,8 @@
 package stock;
 
 public enum ItemType {
-    TYPEA("Pizza Flour", 50, 3, 130),
-    TYPEB("Milk Bottle", 30, 2, 45),
+    TYPEA("PizzaFlour", 50, 3, 130),
+    TYPEB("MilkBottle", 30, 2, 45),
     TYPEC("Eggs", 20, -1, 0),
     TYPED("Wine", 15, -1, 0);
 

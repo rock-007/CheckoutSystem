@@ -28,7 +28,7 @@ public class ItemTest {
 
     @Test
     public void itemBHasNameValue() {
-        assertEquals("Milk Bottle", itemb.getName());
+        assertEquals("MilkBottle", itemb.getName());
     }
 
     @Test
