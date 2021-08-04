@@ -88,3 +88,8 @@ The below are the screenshot of all the tests.
 -CheckOutCounterTest
 
 ![img_3.png](img_3.png)
+
+
+-Testing in terminal
+
+![img_4.png](img_4.png)

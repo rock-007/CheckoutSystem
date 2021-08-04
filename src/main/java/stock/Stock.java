@@ -48,8 +48,7 @@ public class Stock {
                 result = eachItem.getKey();
             }
         }
-        System.out.println("resuklt" + result);
-        return result;
+         return result;
     }
 
 
