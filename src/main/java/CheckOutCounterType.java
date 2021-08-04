@@ -1,3 +1,5 @@
+// CheckOutCounterType is the enum class, it contains all the employees and till information.
+
 public enum CheckOutCounterType {
     ADAMTILL1("ADAM ID1234", 1),
     ADAMTILL2("ADAM ID1234", 2),

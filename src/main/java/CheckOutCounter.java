@@ -6,6 +6,7 @@ import java.util.Map;
 public class CheckOutCounter {
     private int tillNo;
     private String operatorName;
+    //scanItemsQuantityAndTotalPrice will add the scanned items here, and int[] having size 2, stores quantity and total price for that item as an array.
     private Map<Item, int[]> scanItemsQuantityAndTotalPrice;
 
 
@@ -31,16 +32,13 @@ public class CheckOutCounter {
 
     }
 
+    // calculateScanItemsTotal will add all the stored prices in scanItemsQuantityAndTotalPrice hashmap.
     public int calculateScanItemsTotal() {
         int totalPrice = 0;
         for (Map.Entry<Item, int[]> eachScannedItem : scanItemsQuantityAndTotalPrice.entrySet()) {
             totalPrice += eachScannedItem.getValue()[1];
         }
         return totalPrice;
-    }
-
-    public Map<Item, int[]> getScanItemsPriceQuantity() {
-        return scanItemsQuantityAndTotalPrice;
     }
 
     public void setTillNo(int tillNo) {
@@ -54,13 +52,16 @@ public class CheckOutCounter {
 
     public void setScanItemsPriceQuantity(Item item, int quantity) {
         this.scanItemsQuantityAndTotalPrice.put(item, addItemsQuantityAndTotalPrice(item, quantity));
-        System.out.println("The running total is : "+getScanItemsRunningTotal());
+        System.out.println("The running total is : " + getScanItemsRunningTotal());
     }
 
     public int getTillNo() {
         return tillNo;
     }
 
+    public Map<Item, int[]> getScanItemsPriceQuantity() {
+        return scanItemsQuantityAndTotalPrice;
+    }
 
     public String getOperatorName() {
         return operatorName;

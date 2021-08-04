@@ -1,5 +1,10 @@
 package stock;
 
+/**
+ * The ItemA class is a subclass that extends Item super class, this ItemC class will have all the items that are categorized
+ * by their portionSize
+ */
+
 public class ItemC extends Item {
     private int portionSize;
 

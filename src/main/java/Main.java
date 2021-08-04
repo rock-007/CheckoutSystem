@@ -2,6 +2,7 @@ import stock.*;
 
 import java.util.Scanner;
 
+// This is the Main class having main method, we can run the application from here and can test the coding using the terminal.
 public class Main {
     static ItemA itemA = new ItemA(ItemType.TYPEA.getCategory(), ItemType.TYPEA.getPrice(), 25);
     static ItemB itemB = new ItemB(ItemType.TYPEB.getCategory(), ItemType.TYPEB.getPrice(), 2);

@@ -3,6 +3,9 @@ package stock;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * The Stock class stores all the items that later will be scanned/sold through checkOutCounter
+ */
 public class Stock {
     private String storeLocation;
     private Map<Item, Integer> items;
@@ -42,7 +45,7 @@ public class Stock {
         Item result = null;
         for (Map.Entry<Item, Integer> eachItem : items.entrySet()) {
             if (eachItem.getKey().getName().equals(itemName) && eachItem.getValue() >= itemQuantity) {
-                 result = eachItem.getKey();
+                result = eachItem.getKey();
             }
         }
         System.out.println("resuklt" + result);

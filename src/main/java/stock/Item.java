@@ -5,9 +5,18 @@ import behaviour.IPrice;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
+/**
+ * The Item class is a Super class having common methods and properties that ItemA, ItemB, ItemC and ItemD can extend
+ */
+
+
 public class Item implements IPrice {
     private String name;
     private long price;
+    /**
+     * The offerMinQuantityPrice will have two values, at Index 0 it will show the minimum quantity (-1 means it's not valid) to qualify for offer and the Index 1
+     * will be the offer price
+     */
     private long[] offerMinQuantityPrice;
 
     public Item(String name, long price) {

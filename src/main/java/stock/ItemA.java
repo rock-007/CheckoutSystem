@@ -1,5 +1,10 @@
 package stock;
 
+/**
+ * The ItemA class is a subclass that extends Item super class, this ItemA class will have all the items that are categorized
+ * by their weight
+ */
+
 public class ItemA extends Item {
     private int weight;
 

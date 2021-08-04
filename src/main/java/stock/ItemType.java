@@ -1,4 +1,5 @@
 package stock;
+// ItemType is the enum class, it contains all the items information including (Category, price, minQuantitiy and offer price)
 
 public enum ItemType {
     TYPEA("PizzaFlour", 50, 3, 130),
