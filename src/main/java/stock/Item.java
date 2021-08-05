@@ -24,7 +24,7 @@ public class Item implements IPrice {
         this.price = price;
         this.offerMinQuantityPrice = new long[]{-1, price};
     }
-
+// calculateSeparatePrices will first identify the "quantity valid for offer" and "quantity valid for normal price", then calculate prices for both and add them to get the total price for that quantity.
     Function<Integer, Long> calculateSeparatePrices = quantity -> {
         int offerValidQuantity = quantity;
         int normalPriceQuantity = 0;
@@ -34,7 +34,7 @@ public class Item implements IPrice {
         }
         return normalPriceQuantity * this.price + (offerValidQuantity / this.offerMinQuantityPrice[0]) * this.offerMinQuantityPrice[1];
     };
-
+//validOffer will check if the quantity qualify for the offer or not.
     Predicate<Integer> validOffer = quantity -> quantity >= this.offerMinQuantityPrice[0] && this.offerMinQuantityPrice[0] != -1;
 
     // build the logic here to calculate the total price
